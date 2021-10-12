@@ -1,0 +1,4 @@
+curl -i, --include => Include protocol response headers in the output
+
+curl -i http://allegro.pl/
+curl -i https://allegro.pl/
