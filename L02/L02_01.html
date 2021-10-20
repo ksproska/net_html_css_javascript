@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="L01_05.css" type="text/css">
+        <title>Tab title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name = "revised" content = "Wroclaw, 3/7/2014" />
+        <meta name="keywords" content="keywords, test, html, 101, first, steps, .NET">
+        <meta name="author" content="Kamila Sproska">
+        <meta name="description" content="Strona zawiera zadanie na 2 laboratoria z projektowania aplikacji na platformie .NET">
+    </head>
+    <body>
+        <header id="Top">
+            <h1>
+                Zadania: 
+            </h1>
+            <nav>
+                <ul>
+                    <a href="#Special">Znaki specjalne</a>
+                </ul>
+                <ul>
+                    <a href="#List">Listy</a>
+                </ul>
+                <ul>
+                    <a href="#Tab">Tabela</a>
+                </ul>
+                <ul>
+                    <a href="#Form">Formularz</a>
+                </ul>
+                <ul>
+                    <a href="#Formats">Formatowania tekstu</a>
+                </ul>
+                <ul>
+                    <a href="#Bottom">Koniec strony</a>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1 id="Special"> &trade; &apos; &phone; &reg; &amp;</h1>
+
+            <h1 id="List">Listy do zrobienia</h1>
+
+            <ul>
+                <li>Zrobić ordered list</li>
+                <li>Zrobić unordered list</li>
+                <li>Zrobić zagnieżdzone listy</li>
+                <ol>
+                    <li>Zrobić listę zewnętrzną</li>
+                    <li>Zrobić listę wewnętrzną</li>
+                    <li>Wymyślić co można zrobić na kolejnym poziomie (pomysły)</li>
+                    <ul>
+                        <li>wypełnć łaciną</li>
+                        <dl>
+                        <dt>coś do zdefiniowania</dt>
+                        <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores recusandae cum id vero fugiat, aliquam, atque delectus eum eos minus temporibus corporis iure quidem consequuntur. Voluptatum quia ducimus id iure?</dd>
+                        <dt>kolejna definicja</dt>
+                        <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, esse laboriosam aperiam tempora fugiat quam iure sed voluptates, assumenda non odit! Voluptatum ut aspernatur officia est, sapiente minima cupiditate earum.</dd>
+                        <dt>i ostatnia z potrzeby</dt>
+                        <dd>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum vitae vero iure amet! Alias, repellendus voluptatibus repudiandae odit eligendi accusantium ipsum quae minima, magni ad, et reiciendis saepe deserunt! Laudantium.</dd>
+                    </dl>
+                        <li>wymyślić coś meta</li>
+                        <li>oba poprzednie</li>
+                    </ul>
+                    
+                </ol>
+            </ul>
+
+            <h1 id="Tab">Header z tabelą</h1>
+            <caption>Ciekawa tabela</caption>
+            <table border="1">
+                <caption>wewnętrzny nagłówek</caption>
+                <thead>
+                    <tr>
+                        <th colspan="8">text</th>
+                    </tr>
+                    <tr>
+                            <th>Col 1</th><th>Col 2</th><th>Col 3</th>
+                            <th>Col 4</th><th>Col 5</th><th>Col 6</th><th>Col 7</th><th>Col 8</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">1</td>
+                        <td colspan="3">2</td>
+                        <td colspan="2">3</td>
+                        <td colspan="2" rowspan="2">4</td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">5</td>
+                        <td colspan="2" rowspan="4">6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" colspan="3">8</td>
+                        <td colspan="3">9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>11</td>
+                        <td rowspan="2">12</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">13</td>
+                        <td colspan="2">14</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <th colspan="8">footer text</th>
+                </tfoot>
+            </table>
+
+            <h1 id="Form">Prosty formularz</h1>
+            <form method="post" action="http://localhost:5500/SimpleForm.html">
+                <input type="hidden" name="securityCode" value="DE79W23">
+                <p>
+                    <label for="idName">Email:</label>
+                    <input id="idName" name="Name" type="text" size="30" maxlength="50">
+                    <label id="idDomains" name="Domains">@
+                        <select name="course">
+                            <option>gmail.com</option>
+                            <option>wp.pl</option>
+                            <option>student.pwr.edu.pl</option>
+                            <option>outlook.com</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>Jeśli domeny nie ma na liście wpisz email tutaj:</label>
+                    <input id="exception" name="exception" type="email" placeholder="np: cokolwiek@nwm.com">
+                </p>
+                <p>
+                    <label for="idPass">Hasło:</label>
+                    <input id="idPass" name="Name" type="password" size="55" maxlength="50">
+                </p>
+                <p>
+                    <label>Kolor tła:</label>
+                    <input id="idColor" name="Color" type="color" value="#bbbbbb">
+                </p>
+                <p>
+                    <label>Załącz dokument tożsamości: </label>
+                    <input type="file" name="newfile">  
+                </p>
+                <p>
+                    <label>Strona domowa: </label>
+                    <input type="url" name="website" placeholder="http://cokolwiek.com"> 
+                </p>
+                <p>
+                    <label><input name="oop" type="radio" value="stayLogin"  checked>Nie wylogowuj mnie</label>
+                    <label><input name="oop" type="radio" value="grade3">Wyloguj mnie po zakończeniu sesji</label>
+                </p>
+                <p>
+                    <label>Chcę otrzymywać powiadomienia:</label><input name="Notifications" type="checkbox" value="notifications" unchecked>
+                </p>
+                <p>
+                    <label for="job-choice">Wybierz zawód:</label>
+                    <input list="jobs" id="job-choice" name="JobChoice" 
+                    placeholder="nazwa zawodu">
+                    
+                    <datalist id="jobs">
+                        <option value="Architekt"/>
+                        <option value="Informatyk"/>
+                        <option value="Elektryk"/>
+                        <option value="Księgowy"/>
+                        <option value="Nauczyciel"/>
+                    </datalist>
+                </p>
+                <p>
+                    <input type="submit" value="Submit text">
+                    <input type="reset" value="Reset text">
+                </p>
+            </form>
+
+            <h1 id="Formats">
+                Different text formats:
+            </h1>
+
+            <section>
+                <h1>
+                    Benith are other exampels of tags:
+                </h1>
+                <b>b - It is used to define bold text</b><br>
+                <strong>strong - It is used to define important text, add more semantic meaning to the tag</strong>
+                <br>
+                <i>i - It formats text in italic form</i><br>
+                <em>em - It represents stress emphasis on the text same as i tag</em>
+                <br>
+                <u>u - It underlines the text</u>
+                <br>
+                <sup>sup - It defines superscripted text</sup>
+                <br>
+                <sub>sub - It defines subscripted text</sub>
+                <br>
+                <pre>pre - It defines preformatted text</pre>
+                <br>
+                <small>small - It defines smaller text</small>
+                <br>
+                <abbr>abbr - It defines abbreviation or an acronym</abbr>
+                <br>
+                <code>code - It defines a piece of computer code</code>
+                <br>
+                <kbd>kbd - It is used to display keyboard input</kbd>
+                <br>
+                <del>del - It is used to display the text that has been remove from the webpage</del>
+                <br>
+                <ins>ins - It defines a word that has been inserted in the document. It underlines the </ins>
+                <br>
+                <mark>mark - It is used to highlight specific text</mark><br>
+                <blockquote>blockquote - It is used for quotation of a text from another source</blockquote>
+                <br>
+                <s>s- It defines the text that incorrect</s>
+                <br>
+                <address>address - It defines the address or contact of users on a webpage</address>
+                <br>
+                <cite>cite - It defines the title of a journal, a book, a poem etc</cite>
+                <br>
+                <dfn>dfn - It is used to specify a word that is going defined within the content</dfn>
+                <br>
+                <progress>progress - It represents the progress of work on the webpage</progress>
+                <br>
+                <q>q - It creates quotation around the text</q>
+                <br>
+                <samp>samp - It is used to define sample output or a computer program</samp>
+                <br>
+                <template>template - It is used to hide a block of code when the page loads</template>
+                <br>
+                <var>var - It is used to define some variable in a computer program or in a mathematical expression</var>
+                <br>
+            </section>
+        </main>
+        <aside>
+            <header>
+                <h1>
+                    Z poprzednich zajęć:
+                </h1>
+            </header>
+            <ol>
+                <li>
+                    li - just picture source<br><img alt="something for reading" src="simple_img.gif">
+                </li>
+                <li>
+                    li - picture with alt and size 100x100<br><img src="simple_img.gif" alt="This is an example text" width="100" height="100">
+                </li>
+            </ol>
+            <ul>
+                <li>
+                    li - first just a <a href="https://www.tutorialstonight.com/html-tags-list-with-examples.php#ul">link</a> to some unknown place
+                </li>
+                <li>
+                    li - then picture as a link<br><a href="https://www.tutorialstonight.com/html-tags-list-with-examples.php#a"><img src="simple_img.gif" alt="This is an example text" width="100" height="100"></a>
+                </li>
+            </ul>
+            <dl>
+                <dt>dt - link to zip file</dt>
+                <dd>dd - <a href="L01.rar">click here to download</a></dd>
+                <dt>dt - link to email adress</dt>
+                <dd>dd - <a href="mailto:254534@student.pwr.edu.pl">My pwr email</a></dd>
+            </dl>
+        </aside>
+        <footer id="Bottom">
+            <a href="#Top">Idź do początku strony</a>
+        </footer>
+    </body>
+</html>
