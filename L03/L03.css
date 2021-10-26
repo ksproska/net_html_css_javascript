@@ -1,0 +1,230 @@
+div.filler {
+    height: 1000px;
+}
+
+h1, h2, h3 {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+h1 {
+    font-size: 4em;
+}
+
+section h1 {
+    color: rgb(255, 217, 147);
+}
+
+#h1_id {
+    color: lightblue;
+}
+
+section, .highlight {
+    background-color: rgba(128, 128, 128, 0.192);
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+/* rzeczy do z2 _______________________________________________________________________________________ */
+section > p {
+    color: chartreuse;
+    background-color: rgba(0, 0, 0, 0.781);
+    font-family: 'Courier New', Courier, monospace;
+    border: 5px solid pink;
+    margin-left: 1%;
+    width: 57%;
+}
+
+section.Z2 p.em {
+    font-size: 2em
+}
+section p.px {
+    font-size: 33px;
+    text-decoration: line-through;
+}
+p.pt {
+    font-size: 25pt;
+    font-weight: 900;
+}
+.procent {
+    font-size: 200%;
+    color: aqua;
+}
+
+/* rzeczy do z3 ________________________________________________________________________________________ */
+section.Z3 > div {
+    background-color: rgb(137, 65, 219);
+    background-image: url("L03_b2.png");
+    border: 5px solid rgba(0, 255, 0);
+    padding: 10px;
+}
+
+.Z3d {
+    height: 300px;
+    width: 50%;
+}
+
+section.Z3 > div > p {
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 20, 145, 0.575);
+}
+
+section.Z3 div.Z3_1 { 
+    background-repeat: no-repeat;
+    background-position: right 22% bottom 5pt;
+}
+
+section div.Z3_2 {
+    border: 5px solid rgb(4, 0, 255);
+    background-repeat: space;
+}
+
+section div.Z3_3 {
+    background-repeat: round;
+    background-size: 50%;
+    opacity: 0.9;
+}
+
+#Z3_4 {
+    opacity: 0.5;
+}
+
+/* diffrent body backgrounds ____________________________________________________________________________ */
+body {
+    background-color: rgb(40, 7, 66);
+    background-image: url("L03_b4.gif");
+}
+
+.fit {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.half_middle {
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 50%;
+}
+
+.repeated {
+    background-position: right;
+    background-repeat: repeat-y;
+    background-size: 40%;
+}
+
+.small {
+    background-size: 10%;
+}
+
+/* cool table __________________________________________________________________________________________ */
+.cool_table {
+    background-color: blueviolet;
+    color: wheat;
+    font-size: 33px;
+    border-color: black;
+    text-align: center;
+    border-width: 10px;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cool_table tr.tab_tr {
+    color: red;
+    font-size: 2em;
+    line-height: 400%;
+}
+
+.cool_table tr.tab_tr td:hover {
+    color: blue;
+}
+
+.cool_table th {
+    background-color: black;
+}
+
+.cool_table td {
+    border-width: 4px;
+}
+
+#tab_6 {
+    font-size: 4em;
+    color: rgb(238, 168, 255);
+}
+
+/* cool style for menu __________________________________________________________________________________*/
+.cool_style_menu {
+    background-color:rgb(32, 0, 150);
+    color: white;
+}
+
+.cool_style_menu, nav.cool_style_menu > ul {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.cool_style_menu ul li {
+    background-color:rgb(41, 44, 216);
+}
+
+.cool_style_menu ul > li {
+    border: black 1px solid;
+}
+
+nav.cool_style_menu > ul {
+    font-size: 25px;
+}
+
+.cool_style_menu ul li > a {
+    text-decoration: none;
+    font-style: italic;
+    color: rgb(147, 117, 173);
+}
+
+.cool_style_menu ul li a:hover {
+    color: rgb(31, 10, 49);
+}
+
+.cool_style_menu ul > li {
+    list-style: none;
+}
+
+.cool_style_menu ul li ul li{
+    background-color:rgb(14, 90, 177);
+}
+
+.cool_style_menu ul li:hover {
+    background-color: rgb(56, 138, 138);
+}
+
+/* menu _________________________________________________________________________________________________*/
+nav.menu {
+    font-size: 33px;
+    width: 250px;
+    position:fixed;
+}
+
+nav.menu ul.menu_p1 { 
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.menu ul.menu_p1 li ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.menu:hover ul.menu_p1{
+    display: block;
+}
+
+nav.menu ul.menu_p1 li:hover ul {
+    display: block;
+    position: fixed;
+    margin-top: -20px;
+    margin-left: 230px;
+    width: 200px;
+}
