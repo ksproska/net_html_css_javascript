@@ -1,13 +1,21 @@
+body > * {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+}
+
+
+
 div.filler {
     height: 1000px;
 }
 
-h1, h2, h3 {
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
 h1 {
     font-size: 4em;
+}
+
+input {
+    font-size: 20px;
 }
 
 section h1 {
@@ -26,30 +34,6 @@ section, .highlight {
 }
 
 /* rzeczy do z2 _______________________________________________________________________________________ */
-section > p {
-    color: chartreuse;
-    background-color: rgba(0, 0, 0, 0.781);
-    font-family: 'Courier New', Courier, monospace;
-    border: 5px solid pink;
-    margin-left: 1%;
-    width: 57%;
-}
-
-section.Z2 p.em {
-    font-size: 2em
-}
-section p.px {
-    font-size: 33px;
-    text-decoration: line-through;
-}
-p.pt {
-    font-size: 25pt;
-    font-weight: 900;
-}
-.procent {
-    font-size: 200%;
-    color: aqua;
-}
 
 /* rzeczy do z3 ________________________________________________________________________________________ */
 section.Z3 > div {
@@ -89,6 +73,24 @@ section div.Z3_3 {
     opacity: 0.5;
 }
 
+/* sudoklasy ____________________________________________________________________________________________ */
+body form input:focus {
+    background-color: red;
+}
+
+body form input:invalid {
+    text-decoration: line-through;
+}
+
+section > p::selection {
+    background-color: wheat;
+    color: black;
+}
+
+section > P::first-letter{
+    font-size: 40px;
+}
+
 /* diffrent body backgrounds ____________________________________________________________________________ */
 body {
     background-color: rgb(40, 7, 66);
@@ -119,7 +121,7 @@ body {
 }
 
 /* cool table __________________________________________________________________________________________ */
-.cool_table {
+table.cool_table {
     background-color: blueviolet;
     color: wheat;
     font-size: 33px;
@@ -128,16 +130,29 @@ body {
     border-width: 10px;
     table-layout: fixed;
     width: 100%;
+    /* border-collapse: collapse; */
+}
+
+.cool_table td:first-child {
+    background-color: rgb(31, 2, 16);
 }
 
 .cool_table tr.tab_tr {
     color: red;
     font-size: 2em;
-    line-height: 400%;
 }
 
-.cool_table tr.tab_tr td:hover {
+.cool_table tr td:hover {
     color: blue;
+}
+
+.cool_table tr th:hover {
+    color: rgb(115, 115, 250);
+    font-weight: bold;
+}
+
+.cool_table tr:hover {
+    background-color: rgb(97, 8, 109);
 }
 
 .cool_table th {
@@ -150,8 +165,37 @@ body {
 
 #tab_6 {
     font-size: 4em;
-    color: rgb(238, 168, 255);
 }
+
+/* cool table __________________________________________________________________________________________ */
+table.cool_table2 {
+    background-color: rgba(106, 33, 175, 0.507);
+    color: rgb(255, 255, 255);
+    font-size: 33px;
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-color: rgb(255, 255, 255);
+    font-family: fantasy
+}
+
+.cool_table2 tr:nth-child(even) {
+    background-color: #0000008c;
+}
+
+.cool_table2 td:nth-child(odd) {
+    color: #3e24ce;
+}
+
+.cool_table2 tr:nth-child(odd):hover {
+    background-color: rgb(141, 22, 156);
+}
+
+.cool_table2 tr:nth-child(even):hover {
+    background-color: rgb(0, 0, 0);
+}
+
 
 /* cool style for menu __________________________________________________________________________________*/
 .cool_style_menu {
