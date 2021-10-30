@@ -120,6 +120,11 @@ body {
     background-size: 10%;
 }
 
+.fullb {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* cool table __________________________________________________________________________________________ */
 table.cool_table {
     background-color: blueviolet;
