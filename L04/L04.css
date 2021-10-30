@@ -1,0 +1,24 @@
+table {
+    color:black;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    
+    border-color: black;
+    word-wrap: break-word;
+    
+    text-align: right;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table td:first-child, table tr:first-child {
+    background-color: yellow;
+}
+
+table td.odd {
+    background-color: lightsalmon;
+}
+
+table td.even {
+    background-color: aqua;
+}

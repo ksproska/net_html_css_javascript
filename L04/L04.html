@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="L04.css" type="text/css">
+        <title>Tab title</title>
+    </head>
+    <body>
+        <p id="currentSize"></p>
+        <button type="button" id="myButton">Press</button>
+        <table id="myTable" border="1"></table>
+
+        <script>
+            const defaultSize = 5;
+            const sizeMin = 5;
+            const sizeMax = 20;
+            const elemMin = 1;
+            const elemMax = 99;
+            const errorMessages = ["", "Given value is not an integer.", 
+            "Size must be bigger than " + sizeMin, "Size must be smaller than " + sizeMax];
+
+            var inputButton = document.getElementById("myButton");
+            var pDisplay = document.getElementById("currentSize");
+            var multTab = document.getElementById("myTable");
+            var didErrorOccored = 0;
+            var currentSize = defaultSize;
+
+            function getRandomArray(arraySize) {
+                const array = Array(arraySize);
+                for(let i=0; i<arraySize; i++) {
+                    array[i] = Math.floor(elemMin + Math.random()*elemMax)
+                }
+                return array;
+            }
+
+            function getMultiplication2DArray(basicArray) {
+                const bothSizes = basicArray.length;
+                const rowsArray = Array(bothSizes);
+                for(let i=0; i<bothSizes; i++) {
+                    rowsArray[i] = Array(bothSizes);
+                    for(let j=0; j<bothSizes; j++) {
+                        rowsArray[i][j] = basicArray[i] * basicArray[j];
+                    }
+                }
+                return rowsArray;
+            }
+
+            function getMerged2DArray(basicArray, multiplication2DArray) {
+                basicArray[-1] = "";
+                multiplication2DArray[-1] = basicArray;
+                for(let i=0; i<basicArray.length; i++) {
+                    multiplication2DArray[i][-1] = basicArray[i];
+                }
+                return multiplication2DArray;
+            }
+
+            function getParsedError(sizeInput) {
+                var sizeParsed = parseInt(sizeInput);
+                didErrorOccored = 0;
+                if (isNaN(sizeParsed) || String(sizeParsed) != sizeInput) { 
+                    didErrorOccored = 1;
+                    }
+                else if(sizeParsed < sizeMin) { 
+                    didErrorOccored = 2;
+                    }
+                else if(sizeMax < sizeParsed) { 
+                    didErrorOccored = 3;
+                }
+                return didErrorOccored;
+            }
+
+            function runPropmt() {
+                var sizeInput = window.prompt("Input size (" + sizeMin + " <= n <= " + sizeMax + "): ", currentSize);
+                currentSize = parseInt(sizeInput);
+                var lastError = "";
+                didErrorOccored = getParsedError(sizeInput);
+                if(didErrorOccored != 0) {
+                    lastError = "; Wrong input: " + sizeInput + ". Default value: " 
+                    + defaultSize + " set. " + errorMessages[didErrorOccored];
+                    currentSize = defaultSize;
+                }
+                pDisplay.innerHTML = "n = " + currentSize + lastError;
+            }
+
+            function fillTable(table2D, htmlTable) {
+                for(let i = -1; i<table2D.length; i++) {
+                    htmlTable.insertRow();
+                    for(let j = -1; j<table2D[i].length; j++) {
+                        let newCell = htmlTable.rows[htmlTable.rows.length - 1].insertCell();
+                        newCell.textContent = table2D[i][j];
+                        if(i >=0 & j >= 0) {
+                            if(table2D[i][j] % 2 == 0) {
+                                newCell.classList.add("even");
+                            }
+                            else {
+                                newCell.classList.add("odd");
+                            }
+                        }
+                    }
+                }
+                // document.body.appendChild(htmlTable);
+            }
+
+            function runPromptSetTab() {
+                runPropmt();
+                const randomArray = getRandomArray(currentSize);
+                var array2D = getMultiplication2DArray(randomArray);
+                array2D = getMerged2DArray(randomArray, array2D);
+                multTab.innerHTML = "";
+                fillTable(array2D, multTab);
+            }
+
+            inputButton.addEventListener("click", runPromptSetTab);
+        </script>
+    </body>
+</html>
