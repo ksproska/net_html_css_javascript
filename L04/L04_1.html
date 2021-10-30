@@ -6,7 +6,47 @@
         <title>Tab title</title>
     </head>
     <body>
+        <canvas id="myCanvas" width="1000" height="700" style="border:1px solid #000000;">
+            </canvas>
         <script>
+            var canvElement = document.getElementById("myCanvas");
+            var mouseOverCanv = false;
+
+            function getMousePos(canvas) {
+                if(mouseOverCanv) {
+                var rect = canvas.getBoundingClientRect();
+                var evt = window.event;
+                    return {
+                    x: evt.clientX - rect.left,
+                    y: evt.clientY - rect.top
+                    };
+                }
+                return null;
+            }
+            function clearCanvas(canvas) {
+                mouseOverCanv = false;
+                const context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+            }
+
+            function drawLines(canvas) {
+                const context = canvas.getContext('2d');
+                var currentPosition = getMousePos(canvas);
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                var canvasCorners = [[0, 0], [0, canvas.height], [canvas.width, 0], [canvas.width, canvas.height]];
+                canvasCorners.forEach(pair => {
+                    context.moveTo(currentPosition.x, currentPosition.y);
+                    context.lineTo(pair[0], pair[1]);
+                });
+                context.stroke();
+                currentPosition;
+            }
+
+            canvElement.addEventListener("mouseover", function(){ mouseOverCanv = true; });
+            canvElement.addEventListener("mousemove", function(){ return drawLines(canvElement); });
+            canvElement.addEventListener("mouseleave", function(){ return clearCanvas(canvElement); });
         </script>
     </body>
 </html>
