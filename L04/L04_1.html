@@ -6,7 +6,7 @@
         <title>Tab title</title>
     </head>
     <body>
-        <canvas id="myCanvas" width="1000" height="700" style="border:1px solid #000000;">
+        <canvas id="myCanvas" width="1000" height="700">
             </canvas>
         <script>
             var canvElement = document.getElementById("myCanvas");
@@ -40,6 +40,24 @@
                     context.moveTo(currentPosition.x, currentPosition.y);
                     context.lineTo(pair[0], pair[1]);
                 });
+                context.strokeStyle = 'orange';
+                context.stroke();
+                currentPosition;
+            }
+
+            function drawLinesCross(canvas) {
+                const context = canvas.getContext('2d');
+                var currentPosition = getMousePos(canvas);
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                var canvasCorners = [[currentPosition.x, canvas.height], [0, currentPosition.y], [currentPosition.x, 0], [canvas.width, currentPosition.y]];
+                canvasCorners.forEach(pair => {
+                    context.moveTo(currentPosition.x, currentPosition.y);
+                    context.lineTo(pair[0], pair[1]);
+                });
+                // context.beginPath();
+                context.arc(currentPosition.x, currentPosition.y, 40, 0, 2 * Math.PI);
+                context.strokeStyle = 'purple';
                 context.stroke();
                 currentPosition;
             }

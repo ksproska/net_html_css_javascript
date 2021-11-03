@@ -22,3 +22,7 @@ table td.odd {
 table td.even {
     background-color: aqua;
 }
+
+canvas {
+    border:4px solid brown;
+}
